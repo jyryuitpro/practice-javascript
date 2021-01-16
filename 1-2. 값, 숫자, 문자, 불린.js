@@ -1,0 +1,17 @@
+console.log(5);
+console.log(0);
+console.log(3);
+console.log('안녕');
+console.log('류지영');
+console.log('재밌다');
+console.log('불린');
+console.log(true);
+console.log(false);
+console.log('REPL');
+console.log('READ EVALUATE PRINT LOOP');
+console.log(5);
+console.log(3);
+console.log('true');
+console.log(true);
+console.log(5);
+console.log('5');
