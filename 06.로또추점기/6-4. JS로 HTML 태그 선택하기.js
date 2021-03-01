@@ -25,17 +25,70 @@ var 당첨숫자들 = 셔플
 
 console.log('당첨숫자들', 당첨숫자들, '보너스', 보너스);
 
-var 결과창 = document.getElementById('결과창');
 
 // 클로저(closure)에 관련된 문제
-for (var i = 0; i < 당첨숫자들.length; i++) {
-    setTimeout(function 비동기콜백함수() {
-        var 공 = document.createElement('div');
-        공.textContent = 당첨숫자들[i];
-        결과창.appendChild(공);
-    }, 1000);
+// for (var i = 0; i < 당첨숫자들.length; i++) {
+//     setTimeout(function 비동기콜백함수() {
+//         var 공 = document.createElement('div');
+//         공.textContent = 당첨숫자들[i];
+//         결과창.appendChild(공);
+//     }, 1000);
+// }
+// var 보너스칸 = document.getElementsByClassName('보너스')[0];
+// var 보너스공 = document.createElement('div');
+// 보너스공.textContent = 보너스;
+// 보너스칸.appendChild(보너스공);
+
+var 결과창 = document.getElementById('결과창');
+
+function 공색칠하기(숫자, 결과창) {
+    var 공 = document.createElement('div');
+    공.textContent = 숫자;
+    공.style.display = 'inline-block';
+    공.style.border = '1px solid black';
+    공.style.borderRadius = '10px';
+    공.style.width = '20px';
+    공.style.height = '20px';
+    공.style.textAlign = 'center';
+    공.style.marginRight = '10px';
+    결과창.appendChild(공);
 }
-var 보너스칸 = document.getElementsByClassName('보너스')[0];
-var 보너스공 = document.createElement('div');
-보너스공.textContent = 보너스;
-보너스칸.appendChild(보너스공);
+
+setTimeout(function 비동기콜백함수() {
+    공색칠하기(당첨숫자들[0], 결과창);
+}, 1000);
+
+setTimeout(function 비동기콜백함수() {
+    공색칠하기(당첨숫자들[1], 결과창);
+}, 2000);
+
+setTimeout(function 비동기콜백함수() {
+    공색칠하기(당첨숫자들[2], 결과창);
+}, 3000);
+
+setTimeout(function 비동기콜백함수() {
+    공색칠하기(당첨숫자들[3], 결과창);
+}, 4000);
+
+setTimeout(function 비동기콜백함수() {
+    공색칠하기(당첨숫자들[4], 결과창);
+}, 5000);
+
+setTimeout(function 비동기콜백함수() {
+    공색칠하기(당첨숫자들[5], 결과창);
+}, 6000);
+
+setTimeout(function 비동기콜백함수() {
+    // var 보너스칸 = document.getElementsByClassName('보너스')[0];
+    // var 보너스공 = document.createElement('div');
+    // 보너스공.textContent = 보너스;
+    // 보너스공.style.display = 'inline-block';
+    // 보너스공.style.border = '1px solid black';
+    // 보너스공.style.borderRadius = '10px';
+    // 보너스공.style.width = '20px';
+    // 보너스공.style.height = '20px';
+    // 보너스공.style.textAlign = 'center';
+    // 보너스칸.appendChild(보너스공);
+    var 칸 = document.getElementsByClassName('보너스')[0];
+    공색칠하기(보너스, 칸);
+}, 7000);
