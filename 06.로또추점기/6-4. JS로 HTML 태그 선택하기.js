@@ -39,7 +39,8 @@ console.log('당첨숫자들', 당첨숫자들, '보너스', 보너스);
 // 보너스공.textContent = 보너스;
 // 보너스칸.appendChild(보너스공);
 
-var 결과창 = document.getElementById('결과창');
+// var 결과창 = document.getElementById('결과창');
+var 결과창 = document.querySelector('#결과창');
 
 function 공색칠하기(숫자, 결과창) {
     var 공 = document.createElement('div');
@@ -51,6 +52,22 @@ function 공색칠하기(숫자, 결과창) {
     공.style.height = '20px';
     공.style.textAlign = 'center';
     공.style.marginRight = '10px';
+    // 공.id = '공아이디' + 숫자;
+    공.style.fontSize = '12px';
+    공.className = '공아이디' + 숫자;
+    var 배경색;
+    if (숫자 <= 10) {
+        배경색 = 'red';
+    } else if (숫자 <= 20) {
+        배경색 = 'orange';
+    } else if (숫자 <= 30) {
+        배경색 = 'yellow';
+    } else if (숫자 <= 40) {
+        배경색 = 'blue';
+    } else {
+        배경색 = 'green';
+    }
+    공.style.background = 배경색;
     결과창.appendChild(공);
 }
 
@@ -89,6 +106,9 @@ setTimeout(function 비동기콜백함수() {
     // 보너스공.style.height = '20px';
     // 보너스공.style.textAlign = 'center';
     // 보너스칸.appendChild(보너스공);
-    var 칸 = document.getElementsByClassName('보너스')[0];
+
+    // var 칸 = document.getElementsByClassName('보너스')[0];
+    var 칸 = document.querySelector('.보너스');
+
     공색칠하기(보너스, 칸);
 }, 7000);
