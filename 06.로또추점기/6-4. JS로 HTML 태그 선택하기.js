@@ -34,6 +34,30 @@ console.log('당첨숫자들', 당첨숫자들, '보너스', 보너스);
 //         결과창.appendChild(공);
 //     }, 1000);
 // }
+
+// 클로저(closure)에 관련된 문제 해결법 1
+for (var i = 0; i < 당첨숫자들.length; i++) {
+    function 클로저(j) {
+        setTimeout(function 비동기콜백함수() {
+            var 공 = document.createElement('div');
+            공.textContent = 당첨숫자들[j];
+            결과창.appendChild(공);
+        }, (j + 1) * 1000);
+    }
+    클로저(i);
+}
+
+// 클로저(closure)에 관련된 문제 해결법 2
+for (var i = 0; i < 당첨숫자들.length; i++) {
+    // 즉시 실행 함수 : 선언을 하자마자 바로 실행
+    (function 클로저(j) {
+        setTimeout(function 비동기콜백함수() {
+            var 공 = document.createElement('div');
+            공.textContent = 당첨숫자들[j];
+            결과창.appendChild(공);
+        }, (j + 1) * 1000);
+    })(i);
+}
 // var 보너스칸 = document.getElementsByClassName('보너스')[0];
 // var 보너스공 = document.createElement('div');
 // 보너스공.textContent = 보너스;
