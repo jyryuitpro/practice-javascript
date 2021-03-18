@@ -3,7 +3,8 @@ var 세로 = 3;
 // 참조와 복사
 var 색깔들 = ['red', 'red', 'orange', 'orange', 'green', 'green', 'yellow', 'yellow', 'white', 'white', 'pink', 'pink'];
 // 색깔들.slice() : 배열의 참조관계를 끊는 방법
-var 색깔후보 = 색깔들.slice();
+// var 색깔후보 = 색깔들.slice();
+var 색깔후보 = JSON.parse(JSON.stringify(색깔들));
 var 색깔 = [];
 var 클릭플래그 = true;
 var 클릭카드 = [];
@@ -54,7 +55,8 @@ function 카드세팅(가로, 세로) {
                                 var 끝시간 = new Date();
                                 alert('축하합니다! 성공!' + (끝시간 - 시작시간) / 1000 + '초 걸렸습니다.');
                                 document.querySelector('#wrapper').innerHTML = '';
-                                색깔후보 = 색깔들.slice();
+                                // 색깔후보 = 색깔들.slice();
+                                색깔후보 = JSON.parse(JSON.stringify(색깔들));
                                 색깔 = [];
                                 완성카드 = [];
                                 시작시간 = null;
